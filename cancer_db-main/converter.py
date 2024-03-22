@@ -40,7 +40,7 @@ all_intents = []
 
 # Iterate over each JSON file in the directory
 for filename in os.listdir(directory):
-    if filename.endswith("copy.json"):
+    if filename.endswith(".json"):
         filepath = os.path.join(directory, filename)
         intents = convert_to_intent_format(filepath)
         all_intents.extend(intents)
