@@ -20,7 +20,7 @@ def convert_to_intent_format(filename):
 
     intents = []
     for counter, (question, answers) in enumerate(qa_dict.items(), 1):
-        tag = f"question_{counter}"
+        tag = question
         patterns = [question]
         responses = answers
         intent = {
@@ -40,7 +40,7 @@ all_intents = []
 
 # Iterate over each JSON file in the directory
 for filename in os.listdir(directory):
-    if filename.endswith(".json"):
+    if filename.endswith("copy.json"):
         filepath = os.path.join(directory, filename)
         intents = convert_to_intent_format(filepath)
         all_intents.extend(intents)
